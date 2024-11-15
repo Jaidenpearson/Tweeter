@@ -3,6 +3,11 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+ :root {
+  --primary-backgorund: cornsilk;
+  --secondary-background:#4056A1;
+ }
 html {
   box-sizing: border-box;
 }
@@ -16,7 +21,7 @@ html {
 
 body {
   color: #545149;
-  background-color: cornsilk;
+  background-color:var(--primary-backgorund);
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
   padding-top: 120px;
@@ -30,4 +35,23 @@ body {
   font-family: "Bungee", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.mainContainer {
+  width: 90%;
+  background-color: var(--primary-backgorund);
+  padding:1.5em 5%;
+}
+
+.tweetForm {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: flex-start;
+}
+
+button {
+  padding: 10px;
+  color: #fff;
+  background-color: var(--secondary-background);
 }

@@ -1,9 +1,11 @@
 header {
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content:center;
   color: cornsilk;
   align-items:center;
+  height: 400px;
+  width: 100%;
   background-color: #008c8c;
   background-image: url('/images/cartographer.png');
 }
