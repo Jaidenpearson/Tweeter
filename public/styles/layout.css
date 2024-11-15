@@ -16,12 +16,10 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: cornsilk;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+  font-family: 'Source Sans 3', sans-serif;
+  padding-top: 120px;
 }
 
 /*
@@ -32,4 +30,14 @@ body {
   font-family: "Bungee", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  color: cornsilk;
+  align-items:center;
+  background-color: #008c8c;
+  background-image: url('/images/cartographer.png');
 }
