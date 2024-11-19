@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <h1>Keyboard Events Test</h1>
+    <textarea id="keyboardTest" rows="5" cols="30" placeholder="Type here..."></textarea>
+
+    <script>
+      const textarea = document.getElementById('keyboardTest');
+
+// Keydown event
+textarea.addEventListener('keydown', (event) => {
+    console.log('Keydown event:', event);
+    console.log('A key was pressed down.');
+});
+
+// Keypress event (deprecated, use cautiously)
+textarea.addEventListener('keypress', (event) => {
+    console.log('Keypress event:', event);
+    console.log('A printable key was pressed.');
+});
+
+// Keyup event
+textarea.addEventListener('keyup', (event) => {
+    console.log('Keyup event:', event);
+    console.log('A key was released.');
+});
+    </script>
+</body>
+</html>

@@ -22,6 +22,10 @@
      <!-- Header CSS -->
       <link rel="stylesheet" href="/styles/header.css" type="text/css">
 
+      <!-- New tweets CSS -->
+
+      <link rel="stylesheet" href="/styles/new-tweets.css">
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -53,10 +57,17 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="mainContainer">
-      <form class="tweetForm" action="">
-        <input type="text" placeholder="What are you thinking about?">
-        <button class="bungee-regular" type="submit">tweet</button>
-      </form>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="post" class="new-tweet-form">
+          <label for="tweet-text"></label>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div class="lower-form-container">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
