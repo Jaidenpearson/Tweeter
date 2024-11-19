@@ -26,6 +26,10 @@
 
       <link rel="stylesheet" href="/styles/new-tweet.css">
 
+      <!-- tweet CSS -->
+
+      <link rel="stylesheet" href="/styles/tweet.css">
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -50,7 +54,7 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    <header>
+    <header class="main-header">
       <div>
         <img src="/images/profile-hex.png">
       </div>
@@ -71,6 +75,26 @@
             <output name="counter" class="counter" for="tweet-text" value="140">140</output>
           </div>
         </form>
+      </section>
+      <section class="tweet-container">
+        <article class="tweet">
+          <header>
+            <div class="left-header">
+              <img src="/images/profile-hex.png" alt="">
+              <p class="user-name">MistaMiyagi</p>
+            </div>
+            <p class="user-handle">@WeOutHere</p>
+          </header>
+          <h3>THIS HAS TEXT</h3>
+          <footer>
+            <p>Janury 15th, 2024</p>
+            <div class="icons">
+              <a href=""><i class="fa-solid fa-flag"></i></a>
+              <a href=""><i class="fa-solid fa-retweet"></i></a>
+              <a href=""><i class="fa-solid fa-heart"></i></a>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>

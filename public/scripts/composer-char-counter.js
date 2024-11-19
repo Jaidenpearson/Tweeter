@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#tweet-text').on('keydown', function() {
+  $('#tweet-text').on('input', function() {
     const counter = $('#tweet-text')
     .closest('form')
     .find('.counter')
