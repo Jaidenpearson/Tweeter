@@ -24,7 +24,7 @@
 
       <!-- New tweets CSS -->
 
-      <link rel="stylesheet" href="/styles/new-tweets.css">
+      <link rel="stylesheet" href="/styles/new-tweet.css">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -32,6 +32,10 @@
     <!-- Font Awesome -->
 
     <script src="https://kit.fontawesome.com/2d414e0f78.js" crossorigin="anonymous"></script>
+
+    <!-- Character counter -->
+
+    <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -60,11 +64,11 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="post" class="new-tweet-form">
-          <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
           <div class="lower-form-container">
             <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" class="counter" for="tweet-text" value="140">140</output>
           </div>
         </form>
       </section>

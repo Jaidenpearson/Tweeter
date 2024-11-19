@@ -24,6 +24,7 @@
   resize: none;
   width: 100%;
   border: none;
+  padding: .5em;
   border-bottom: solid black;
   background-color:#f3f1ed;
 }
