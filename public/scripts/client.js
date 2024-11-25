@@ -9,12 +9,20 @@ $(document).ready(function(){
 
 $('.new-tweet-form').on('submit', function(event) {
   event.preventDefault()
+
+  const tweetText = $('#tweet-text').val()
+  if (tweetText === '' || tweetText === null) {
+    alert("Cannot post an empty tweet")
+    return
+  } if (tweetText.length > 140) {
+    alert('Tweet exceeds maximum character limit')
+    return
+  }
   
   const serializedTweet = $(this).serialize()
   
   $.post(`/tweets`, serializedTweet)
     .then((tweet) => {
-      console.log(tweet)
       renderTweets([tweet])
     })
   })
@@ -25,8 +33,6 @@ $('.new-tweet-form').on('submit', function(event) {
         renderTweets(tweets)
       })
   }
-
-  loadTweets()
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
@@ -59,5 +65,6 @@ let $tweet =  $(`
 return $tweet;
 }
 
+loadTweets()
 
 });
