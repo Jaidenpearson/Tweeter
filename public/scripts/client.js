@@ -30,6 +30,18 @@ const data = [
   }
 ]
 
+$('.new-tweet-form').on('submit', function(event) {
+  event.preventDefault()
+  
+  const serializedTweet = $(this).serialize()
+  
+  $.post(`/tweets`, serializedTweet)
+    .then((tweet) => {
+      console.log(tweet)
+      renderTweets([tweet])
+    })
+  })
+
 const createTweetElement = function(tweet) {
 let $tweet =  $(`
   <article class="tweet">
