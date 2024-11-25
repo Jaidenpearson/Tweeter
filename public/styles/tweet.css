@@ -6,6 +6,7 @@ article.tweet {
   border: solid black 3px;
   border-radius: 5px;
   padding: 1em;
+  margin: 1em;
 }
 
 article.tweet:hover {
