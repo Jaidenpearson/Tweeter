@@ -7,40 +7,20 @@ $(document).ready(function(){
 
   const timeFormat = timeago.format
 
-$('.new-tweet-form').on('submit', function(event) {
-  event.preventDefault()
-
-  const tweetText = $('#tweet-text').val()
-  if (tweetText === '' || tweetText === null) {
-    alert("Cannot post an empty tweet")
-    return
-  } if (tweetText.length > 140) {
-    alert('Tweet exceeds maximum character limit')
-    return
-  }
-  
-  const serializedTweet = $(this).serialize()
-  
-  $.post(`/tweets`, serializedTweet)
-    .then((tweet) => {
-      renderTweets([tweet])
-    })
-  })
-
-  const loadTweets = function() {
-    $.get('http://localhost:8080/tweets')
-      .then(function(tweets) {
-        renderTweets(tweets)
-      })
-  }
-
-  const renderTweets = function(tweets) {
-    for (const tweet of tweets) {
-      $('.tweet-container').append(createTweetElement(tweet))
+  const isTweetValid = () => {
+    
+    const tweetText = $('#tweet-text').val().trim()
+    if (tweetText === '' || tweetText === null) {
+      alert("Cannot post an empty tweet")
+      return
+    } if (tweetText.length > 140) {
+      alert('Tweet exceeds maximum character limit')
+      return
     }
   }
 
 const createTweetElement = function(tweet) {
+  console.log('tweet', tweet)
 let $tweet =  $(`
   <article class="tweet">
         <header>
@@ -65,6 +45,39 @@ let $tweet =  $(`
 return $tweet;
 }
 
-loadTweets()
+const renderTweets = function(tweets) {
+  $('.tweet-container').empty()
+  for (const tweet of tweets) {
+    $('.tweet-container').append(createTweetElement(tweet))
+  }
+}
+
+const loadTweets = function() {
+  $.get('http://localhost:8080/tweets')
+    .then(function(tweets) {
+      console.log('line 58', tweets)
+      renderTweets(tweets)
+  })
+}
+
+$('.new-tweet-form').on('submit', function(event) {
+  event.preventDefault()
+
+  isTweetValid()
+  
+  const serializedTweet = $(this).serialize()
+
+  $.post(`/tweets`, serializedTweet)
+    .then(() => {
+      loadTweets()
+      $('.counter').text(140)
+      $('#tweet-text').val('') 
+    }).catch(((error) => {
+      alert('An error occurred while posting tweet')
+      console.error(error)
+    }))
+  })
+
+  loadTweets()
 
 });
