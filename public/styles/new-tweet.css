@@ -28,3 +28,10 @@
   border-bottom: solid black;
   background-color:#f3f1ed;
 }
+
+#tweet-error {
+color: red;
+border-radius: 3px;
+padding: .5em 1em;
+display: none;
+}

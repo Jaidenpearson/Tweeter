@@ -7,30 +7,43 @@ $(document).ready(function(){
 
   const timeFormat = timeago.format
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  const displayError = (str) => {
+    $('#tweet-error').css('display', 'inline').text(str)
+  }
+
   const isTweetValid = () => {
     
     const tweetText = $('#tweet-text').val().trim()
+
     if (tweetText === '' || tweetText === null) {
-      alert("Cannot post an empty tweet")
-      return
-    } if (tweetText.length > 140) {
-      alert('Tweet exceeds maximum character limit')
-      return
+      displayError("Cannot post an empty tweet")
+      return false
+    } 
+    
+    if (tweetText.length > 140) {
+      displayError('Tweet exceeds maximum character limit')
+      return false
     }
+    return true
   }
 
 const createTweetElement = function(tweet) {
-  console.log('tweet', tweet)
 let $tweet =  $(`
   <article class="tweet">
         <header>
           <div class="left-header">
             <img src="${tweet.user.avatars}" alt="">
-            <p class="user-name">"${tweet.user.name}"</p>
+            <p class="user-name">"${escape(tweet.user.name)}"</p>
           </div>
-          <p class="user-handle">"${tweet.user.handle}"</p>
+          <p class="user-handle">"${escape(tweet.user.handle)}"</p>
         </header>
-        <h3>"${tweet.content.text}"</h3>
+        <h3>"${escape(tweet.content.text)}"</h3>
         <footer>
           <p>"${timeFormat(tweet.created_at)}"</p>
           <div class="icons">
@@ -55,7 +68,6 @@ const renderTweets = function(tweets) {
 const loadTweets = function() {
   $.get('http://localhost:8080/tweets')
     .then(function(tweets) {
-      console.log('line 58', tweets)
       renderTweets(tweets)
   })
 }
@@ -63,7 +75,7 @@ const loadTweets = function() {
 $('.new-tweet-form').on('submit', function(event) {
   event.preventDefault()
 
-  isTweetValid()
+  if(!isTweetValid()) return;
   
   const serializedTweet = $(this).serialize()
 
@@ -73,7 +85,6 @@ $('.new-tweet-form').on('submit', function(event) {
       $('.counter').text(140)
       $('#tweet-text').val('') 
     }).catch(((error) => {
-      alert('An error occurred while posting tweet')
       console.error(error)
     }))
   })
