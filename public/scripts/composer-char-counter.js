@@ -12,6 +12,10 @@ $(document).ready(function() {
       counter.css('color', 'red')
     }
 
+    if(remainingLength >= 0) {
+      counter.css('color', 'black')
+    }
+
     counter.text(remainingLength)
   })
 });

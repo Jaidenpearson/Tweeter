@@ -30,6 +30,8 @@ $(document).ready(function(){
       displayError('Tweet exceeds maximum character limit')
       return false
     }
+    
+    $('#tweet-error').css('display', 'none')
     return true
   }
 
