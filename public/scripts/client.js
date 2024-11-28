@@ -41,13 +41,13 @@ let $tweet =  $(`
         <header>
           <div class="left-header">
             <img src="${tweet.user.avatars}" alt="">
-            <p class="user-name">"${escape(tweet.user.name)}"</p>
+            <p class="user-name">${escape(tweet.user.name)}</p>
           </div>
-          <p class="user-handle">"${escape(tweet.user.handle)}"</p>
+          <p class="user-handle">${escape(tweet.user.handle)}</p>
         </header>
-        <h3>"${escape(tweet.content.text)}"</h3>
+        <h3>${escape(tweet.content.text)}</h3>
         <footer>
-          <p>"${timeFormat(tweet.created_at)}"</p>
+          <p>${timeFormat(tweet.created_at)}</p>
           <div class="icons">
             <a href=""><i class="fa-solid fa-flag"></i></a>
             <a href=""><i class="fa-solid fa-retweet"></i></a>

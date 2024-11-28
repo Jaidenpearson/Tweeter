@@ -1,3 +1,13 @@
+@keyframes arrowAnimation {
+  from {}
+  to {transform: translateY(7px)};
+}
+
+@keyframes tweeterLoadIn {
+  from {transform: translateX(-10em);}
+  to {}
+}
+
 #navBar {
   display: flex;
   justify-content: space-between;
@@ -7,8 +17,13 @@
   position: fixed;
   color: #FFFFFF;
   height: 120px;
-  background-color: #4056A1;
-  padding: 0 1.5em;
+  background-color: #252422;
+  padding: 0 2em;
+  z-index: 1;
+}
+
+.bungee-regular {
+  animation: tweeterLoadIn 1s;
 }
 
 .newTweetContainer {
@@ -19,5 +34,7 @@
 }
 
  .fa-angles-down{
-  color: #e83f27;
+  color: #f7996e;
+  animation: arrowAnimation 1.5s ease-in-out infinite alternate;
 }
+

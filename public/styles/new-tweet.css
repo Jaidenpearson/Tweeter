@@ -19,6 +19,27 @@
   width: 100%;
 }
 
+.new-tweet-form button {
+  border: 3px solid black;
+  border-radius: 3px;
+  background: linear-gradient(to left, #008c8c 50%,  #F7996E 50%) right;
+  background-size: 200%;
+  padding: 10px;
+  color: #fff;
+}
+
+.new-tweet-form button:hover {
+  transition: 0.3s ease-in-out;
+  background-position: left;
+  color: black;
+}
+
+.new-tweet-form button :not(:hover) {
+  transition: 0.3s ease-in-out;
+  background-position: right;
+  color: white;
+}
+
 #tweet-text {
   outline: none;
   resize: none;

@@ -11,7 +11,8 @@ article.tweet {
 
 article.tweet:hover {
   transition: .3s;
-    box-shadow: 10px 5px 5px #008c8c;
+    box-shadow: 10px 5px 5px #976391;
+    transform: scale(102%);
 }
 
 article.tweet header {
@@ -27,7 +28,8 @@ article.tweet .user-handle {
 article.tweet .left-header {
   display: flex;
   align-items: center;
-  gap: .25em;
+  gap: .5em;
+  width: 20%;
 }
 
 article.tweet h3 {

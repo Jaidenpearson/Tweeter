@@ -5,8 +5,8 @@
  */
 
  :root {
-  --primary-backgorund: cornsilk;
-  --secondary-background:#4056A1;
+  --primary-backgorund: #DFBBB1;
+  --secondary-background:#F7996E;
   --tertiary-background: #f3f1ed;
  }
 html {
@@ -49,10 +49,4 @@ body {
   flex-direction: column;
   justify-content:center;
   align-items: flex-start;
-}
-
-button {
-  padding: 10px;
-  color: #fff;
-  background-color: var(--secondary-background);
 }
