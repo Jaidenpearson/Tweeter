@@ -74,6 +74,13 @@ const loadTweets = function() {
   })
 }
 
+$('.new-tweet').hide()
+
+$('.newTweetContainer').on('click', function() {
+  $('.new-tweet').show();
+  $('#tweet-text').focus()
+})
+
 $('.new-tweet-form').on('submit', function(event) {
   event.preventDefault()
 
