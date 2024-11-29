@@ -91,6 +91,8 @@ $('#returnButton').on('click', function() {
   })
 })
 
+$('.returnButtonContainer').hide();
+
 let debounceTimer;
 $(window).on('scroll', function() {
   clearTimeout(debounceTimer);
@@ -99,13 +101,15 @@ $(window).on('scroll', function() {
     if ($(window).scrollTop() > navHeight) {
       if ($('#navBar').is(':visible')) {
         $('#navBar').slideUp();
+        $('.returnButtonContainer').slideDown();
       }
     } else {
       if (!$('#navBar').is(':visible')) {
         $('#navBar').slideDown();
+        $('.returnButtonContainer').slideUp();
       }
     }
-  }, 9); // Adjust the delay (100ms) as needed
+  }, 12); // Adjust the delay (100ms) as needed
 });
 
 $('.new-tweet').hide()
