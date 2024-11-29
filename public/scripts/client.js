@@ -74,6 +74,40 @@ const loadTweets = function() {
   })
 }
 
+$('#returnButton').on('click', function() {
+  $('html, body').animate({
+    scrollTop: $("#tweet-text").offset().top
+  }, 1000);
+
+  $('.new-tweet').slideDown('slow', function() {
+    if($('.new-tweet').is(':visible')) {
+      $('#tweet-text').focus()
+    } else {
+      $('.new-tweet').slideDown('slow', function() {
+        $('#tweet-text').focus()
+      })
+    }
+  
+  })
+})
+
+let debounceTimer;
+$(window).on('scroll', function() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(function() {
+    const navHeight = $('#navBar').height();
+    if ($(window).scrollTop() > navHeight) {
+      if ($('#navBar').is(':visible')) {
+        $('#navBar').slideUp();
+      }
+    } else {
+      if (!$('#navBar').is(':visible')) {
+        $('#navBar').slideDown();
+      }
+    }
+  }, 9); // Adjust the delay (100ms) as needed
+});
+
 $('.new-tweet').hide()
 
 $('.newTweetContainer').on('click', function() {

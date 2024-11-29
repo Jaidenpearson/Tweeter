@@ -44,5 +44,25 @@
   animation: arrowAnimation 1.5s ease-in-out infinite alternate;
 }
 
+.returnButtonContainer {
+  display: flex;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+}
+
+#returnButton {
+  border-radius: 100%;
+  background-color: white;
+  cursor: pointer;
+  padding: 1em;
+}
+
+#returnButton:hover {
+  background-color: #f1753c;
+  border-width: 0;
+  transition: .5s;
+}
+
 
 
