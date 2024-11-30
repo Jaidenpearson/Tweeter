@@ -47,3 +47,11 @@ animation-delay: 1s;
     typing 1s steps(14, end);
   border: transparent;
 }
+
+@media only screen and (min-width: 1024px) {
+  .main-header {
+    width: 90%;
+    border: solid black 8px;
+    margin: 2em;
+  }
+}

@@ -76,7 +76,7 @@ const loadTweets = function() {
 
 $('#returnButton').on('click', function() {
   $('html, body').animate({
-    scrollTop: $("#tweet-text").offset().top
+    scrollTop: $(".new-tweet").offset().top
   }, 1000);
 
   $('.new-tweet').slideDown('slow', function() {
@@ -109,7 +109,7 @@ $(window).on('scroll', function() {
         $('.returnButtonContainer').slideUp();
       }
     }
-  }, 12); // Adjust the delay (100ms) as needed
+  }, 12); // Delay on Navbar slideDown
 });
 
 $('.new-tweet').hide()
