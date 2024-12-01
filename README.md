@@ -31,4 +31,8 @@ The third screenshot displays the responsive design between desktop and mobile d
 
 ## Screenshots
 
-!["Screenshot of the page on load with highlights] ()
+!["Screenshot of the page on load with highlights"](https://github.com/Jaidenpearson/Tweeter/blob/master/docs/Highlighted%20buttons.png?raw=true)
+
+!["Image of highlighted return button at bottom of page"](https://github.com/Jaidenpearson/Tweeter/blob/master/docs/Highlighted%20return%20button.png?raw=true)
+
+!["Image displaying responsive design scaled for smaller devices"](https://github.com/Jaidenpearson/Tweeter/blob/master/docs/Responsive%20design.png?raw=true)
